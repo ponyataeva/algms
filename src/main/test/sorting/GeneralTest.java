@@ -39,4 +39,24 @@ abstract class GeneralTest {
         assertTrue(Arrays.equals(expected, actual.getSorted()));
     }
 
+    @Test
+    void sort_whenNegativeNumbers_thenSortAndReturn() {
+        var expected = new int[]{-20, -10, -2, 3, 5, 15};
+        var target = new int[]{-20, 15, -10, 5, 3, -2};
+
+        var actual = soringFunction.apply(target);
+
+        assertTrue(Arrays.equals(expected, actual.getSorted()));
+    }
+
+    @Test
+    void sort_whenSortedArray_thenReturnTheSame() {
+        var expected = new int[]{1, 2, 3, 4, 5, 6};
+        var target = new int[]{1, 2, 3, 4, 5, 6};
+
+        var actual = soringFunction.apply(target);
+
+        assertTrue(Arrays.equals(expected, actual.getSorted()));
+    }
+
 }
