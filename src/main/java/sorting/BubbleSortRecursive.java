@@ -3,6 +3,13 @@ package sorting;
 import lombok.NoArgsConstructor;
 import model.Result;
 
+/**
+ * Recursive implementation of the bubble sort.
+ * Based on the principal that the last element will always
+ * be the biggest element in the array.
+ *
+ * Its execution time will always be O(n^2)
+ */
 @NoArgsConstructor
 public final class BubbleSortRecursive {
 

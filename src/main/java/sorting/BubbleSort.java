@@ -3,8 +3,13 @@ package sorting;
 import lombok.NoArgsConstructor;
 import model.Result;
 
-import java.util.Arrays;
-
+/**
+ * Bubble sort is a very simple sort. Its execution time
+ * in best case scenario O(n) in worst O(n^2).
+ * <p>
+ * The algorithm runs through the source array and swap
+ * the adjacent elements if they're in a wrong order.
+ */
 @NoArgsConstructor
 public final class BubbleSort {
 
