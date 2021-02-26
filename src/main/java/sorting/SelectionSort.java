@@ -9,11 +9,12 @@ public final class SelectionSort {
     public static final String NAME = "selection-sort";
 
     public static Result sort(int[] source) {
+        var start = System.currentTimeMillis();
+
         var sourceSize = source.length;
         int minimumValue;
         int minPosition;
 
-        var start = System.currentTimeMillis();
         for (var i = 0; i < sourceSize; i++) {
             minimumValue = source[i];
             minPosition = i;
@@ -23,9 +24,8 @@ public final class SelectionSort {
                     minPosition = j;
                 }
             }
-            var tmp = source[i];
-            source[i] = minimumValue;
-            source[minPosition] = tmp;
+
+            ArrayUtils.swap(source, minPosition, i);
         }
         var end = System.currentTimeMillis();
 

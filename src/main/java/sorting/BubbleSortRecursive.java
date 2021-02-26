@@ -1,0 +1,32 @@
+package sorting;
+
+import lombok.NoArgsConstructor;
+import model.Result;
+
+@NoArgsConstructor
+public final class BubbleSortRecursive {
+
+    public static final String NAME = "bubble-sort";
+
+    public static Result sort(int[] source) {
+        var start = System.currentTimeMillis();
+        sort(source, source.length);
+        var end = System.currentTimeMillis();
+
+        return new Result(NAME, source, end - start);
+    }
+
+    private static void sort(int[] source, int end) {
+        var isSorted = true;
+
+        for (var i = 1; i < end; i++) {
+            if (source[i - 1] > source[i]) {
+                isSorted = false;
+                ArrayUtils.swap(source, i - 1, i);
+            }
+        }
+        if (!isSorted) {
+            sort(source, end - 1);
+        }
+    }
+}
