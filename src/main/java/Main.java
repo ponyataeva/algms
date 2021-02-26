@@ -1,4 +1,5 @@
 import model.Result;
+import sorting.BubbleSort;
 import sorting.SelectionSort;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ public class Main {
         System.out.println("unsorted data: " + Arrays.toString(targetData));
 
         run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
+        run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), true);
     }
 
     public static void run(Function<int[], Result> sorting, int[] toSort, boolean printResult) {
