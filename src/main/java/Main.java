@@ -1,6 +1,7 @@
 import model.Result;
 import sorting.BubbleSort;
 import sorting.BubbleSortRecursive;
+import sorting.InsertionSort;
 import sorting.SelectionSort;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class Main {
         run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(BubbleSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), true);
+        run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
     }
 
     public static void run(Function<int[], Result> sorting, int[] toSort, boolean printResult) {
@@ -27,7 +29,7 @@ public class Main {
     }
 
     private static String executionTimeMsg(Result result) {
-        return String.format("%s: execution time: %ss",
+        return String.format("\n%s: execution time: %ss",
                 result.getAlgorithmName(),
                 result.getExecutionTime() / 1000);
     }

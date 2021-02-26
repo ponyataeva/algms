@@ -13,7 +13,7 @@ import model.Result;
 @NoArgsConstructor
 public final class BubbleSortRecursive {
 
-    public static final String NAME = "bubble-sort";
+    public static final String NAME = "bubble-sort[recursive]";
 
     public static Result sort(int[] source) {
         var start = System.currentTimeMillis();
