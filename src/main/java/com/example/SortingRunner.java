@@ -9,7 +9,7 @@ import com.example.sorting.SelectionSort;
 import java.util.Arrays;
 import java.util.function.Function;
 
-public class Main {
+public class SortingRunner {
 
     public static void main(String[] args) {
         var targetData = DataGenerator.generateData(10);
