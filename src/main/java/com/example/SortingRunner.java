@@ -1,10 +1,7 @@
 package com.example;
 
 import com.example.model.Result;
-import com.example.sorting.BubbleSort;
-import com.example.sorting.BubbleSortRecursive;
-import com.example.sorting.InsertionSort;
-import com.example.sorting.SelectionSort;
+import com.example.sorting.*;
 
 import java.util.Arrays;
 import java.util.function.Function;
@@ -19,8 +16,7 @@ public class SortingRunner {
         run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(BubbleSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
-
-
+        run(InsertionSortBinarySearch::sort, Arrays.copyOf(targetData, targetData.length), true);
     }
 
     public static void run(Function<int[], Result<int[]>> sorting, int[] toSort, boolean printResult) {
