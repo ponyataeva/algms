@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class SortingRunner {
 
     public static void main(String[] args) {
-        var targetData = DataGenerator.generateData(10);
+        var targetData = DataGenerator.generateData(10000);
         System.out.println("unsorted data: " + Arrays.toString(targetData));
 
         run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
@@ -33,9 +33,9 @@ public class SortingRunner {
     }
 
     private static String executionTimeMsg(Result<int[]> result) {
-        return String.format("\n%s: execution time: %ss",
+        return String.format("\n%s: execution time: %sms",
                 result.getAlgorithmName(),
-                result.getExecutionTime() / 1000);
+                result.getExecutionTime());
     }
 
     private static String sortedArrayMessage(Result<int[]> result) {
