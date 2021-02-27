@@ -9,14 +9,15 @@ import java.util.function.Function;
 public class SortingRunner {
 
     public static void main(String[] args) {
-        var targetData = DataGenerator.generateData(10000);
+        var targetData = DataGenerator.generateData(100);
         System.out.println("unsorted data: " + Arrays.toString(targetData));
 
-        run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
-        run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), true);
-        run(BubbleSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), true);
-        run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
-        run(InsertionSortBinarySearch::sort, Arrays.copyOf(targetData, targetData.length), true);
+        run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(BubbleSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(InsertionSortBinarySearch::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(InsertionSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
     }
 
     public static void run(Function<int[], Result<int[]>> sorting, int[] toSort, boolean printResult) {
