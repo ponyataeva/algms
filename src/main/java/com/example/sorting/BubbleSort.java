@@ -1,7 +1,7 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.NoArgsConstructor;
-import model.Result;
+import com.example.model.Result;
 
 /**
  * Bubble sort is a very simple sort. Its execution time
@@ -15,7 +15,7 @@ public final class BubbleSort {
 
     public static final String NAME = "bubble-sort";
 
-    public static Result sort(int[] source) {
+    public static Result<int[]> sort(int[] source) {
         var start = System.currentTimeMillis();
         var isSorted = false;
 
@@ -32,6 +32,6 @@ public final class BubbleSort {
         }
         var end = System.currentTimeMillis();
 
-        return new Result(NAME, source, end - start);
+        return new Result<>(NAME, source, end - start);
     }
 }

@@ -1,7 +1,7 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.RequiredArgsConstructor;
-import model.Result;
+import com.example.model.Result;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,10 +9,11 @@ import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @RequiredArgsConstructor
 abstract class GeneralTest {
 
-    private final Function<int[], Result> soringFunction;
+    private final Function<int[], Result<int[]>> soringFunction;
 
     @Test
     void sort_whenEmptyArray_thenDoNotThrowError() {
@@ -26,7 +27,7 @@ abstract class GeneralTest {
 
         var actual = soringFunction.apply(target);
 
-        assertTrue(Arrays.equals(expected, actual.getSorted()));
+        assertTrue(Arrays.equals(expected, actual.getResult()));
     }
 
     @Test
@@ -36,7 +37,7 @@ abstract class GeneralTest {
 
         var actual = soringFunction.apply(target);
 
-        assertTrue(Arrays.equals(expected, actual.getSorted()));
+        assertTrue(Arrays.equals(expected, actual.getResult()));
     }
 
     @Test
@@ -46,7 +47,7 @@ abstract class GeneralTest {
 
         var actual = soringFunction.apply(target);
 
-        assertTrue(Arrays.equals(expected, actual.getSorted()));
+        assertTrue(Arrays.equals(expected, actual.getResult()));
     }
 
     @Test
@@ -56,7 +57,7 @@ abstract class GeneralTest {
 
         var actual = soringFunction.apply(target);
 
-        assertTrue(Arrays.equals(expected, actual.getSorted()));
+        assertTrue(Arrays.equals(expected, actual.getResult()));
     }
 
 }

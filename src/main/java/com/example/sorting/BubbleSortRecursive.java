@@ -1,7 +1,7 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.NoArgsConstructor;
-import model.Result;
+import com.example.model.Result;
 
 /**
  * Recursive implementation of the bubble sort.
@@ -15,12 +15,12 @@ public final class BubbleSortRecursive {
 
     public static final String NAME = "bubble-sort[recursive]";
 
-    public static Result sort(int[] source) {
+    public static Result<int[]> sort(int[] source) {
         var start = System.currentTimeMillis();
         sort(source, source.length);
         var end = System.currentTimeMillis();
 
-        return new Result(NAME, source, end - start);
+        return new Result<>(NAME, source, end - start);
     }
 
     private static void sort(int[] source, int end) {

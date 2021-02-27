@@ -1,3 +1,5 @@
+package com.example;
+
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

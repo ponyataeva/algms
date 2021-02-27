@@ -1,8 +1,10 @@
-import model.Result;
-import sorting.BubbleSort;
-import sorting.BubbleSortRecursive;
-import sorting.InsertionSort;
-import sorting.SelectionSort;
+package com.example;
+
+import com.example.model.Result;
+import com.example.sorting.BubbleSort;
+import com.example.sorting.BubbleSortRecursive;
+import com.example.sorting.InsertionSort;
+import com.example.sorting.SelectionSort;
 
 import java.util.Arrays;
 import java.util.function.Function;
@@ -17,9 +19,11 @@ public class Main {
         run(BubbleSort::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(BubbleSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), true);
         run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), true);
+
+
     }
 
-    public static void run(Function<int[], Result> sorting, int[] toSort, boolean printResult) {
+    public static void run(Function<int[], Result<int[]>> sorting, int[] toSort, boolean printResult) {
         var result = sorting.apply(toSort);
         System.out.println(executionTimeMsg(result));
 
@@ -28,15 +32,15 @@ public class Main {
         }
     }
 
-    private static String executionTimeMsg(Result result) {
+    private static String executionTimeMsg(Result<int[]> result) {
         return String.format("\n%s: execution time: %ss",
                 result.getAlgorithmName(),
                 result.getExecutionTime() / 1000);
     }
 
-    private static String sortedArrayMessage(Result result) {
+    private static String sortedArrayMessage(Result<int[]> result) {
         return String.format("%s: sorted array: %s",
                 result.getAlgorithmName(),
-                Arrays.toString(result.getSorted()));
+                Arrays.toString(result.getResult()));
     }
 }

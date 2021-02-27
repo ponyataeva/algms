@@ -1,17 +1,18 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.NoArgsConstructor;
-import model.Result;
+import com.example.model.Result;
 
 /**
- *
+ * Inserts the smallest element from unsorted part into
+ * a right place in the sorted part.
  */
 @NoArgsConstructor
 public final class InsertionSort {
 
     public static final String NAME = "insertion-sort";
 
-    public static Result sort(int[] source) {
+    public static Result<int[]> sort(int[] source) {
         var start = System.currentTimeMillis();
 
         for (var i = 1; i < source.length; i++) {
@@ -23,6 +24,6 @@ public final class InsertionSort {
         }
         var end = System.currentTimeMillis();
 
-        return new Result(NAME, source, end - start);
+        return new Result<>(NAME, source, end - start);
     }
 }

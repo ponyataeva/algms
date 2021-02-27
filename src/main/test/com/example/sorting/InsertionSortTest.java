@@ -1,4 +1,4 @@
-package sorting;
+package com.example.sorting;
 
 class InsertionSortTest extends GeneralTest {
 

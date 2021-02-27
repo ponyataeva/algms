@@ -1,4 +1,4 @@
-package model;
+package com.example.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -9,18 +9,18 @@ import lombok.ToString;
 @Getter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Result {
+public class Result<T> {
 
     /**
-     * Used sorting algorithm
+     * Used com.example.sorting algorithm
      */
     @EqualsAndHashCode.Include
     private final String algorithmName;
 
     /**
-     * Result data after the sorting
+     * Result data after the algorithm execution
      */
-    private final int[] sorted;
+    private final T result;
 
     /**
      * The algorithm's time consumption

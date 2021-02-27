@@ -1,4 +1,4 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.NoArgsConstructor;
 

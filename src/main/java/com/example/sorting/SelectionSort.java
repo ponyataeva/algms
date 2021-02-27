@@ -1,7 +1,7 @@
-package sorting;
+package com.example.sorting;
 
 import lombok.NoArgsConstructor;
-import model.Result;
+import com.example.model.Result;
 
 /**
  * The selection sort algorithm sorts an array by repeatedly finding
@@ -15,7 +15,7 @@ public final class SelectionSort {
 
     public static final String NAME = "selection-sort";
 
-    public static Result sort(int[] source) {
+    public static Result<int[]> sort(int[] source) {
         var start = System.currentTimeMillis();
 
         var sourceSize = source.length;
@@ -36,6 +36,6 @@ public final class SelectionSort {
         }
         var end = System.currentTimeMillis();
 
-        return new Result(NAME, source, end - start);
+        return new Result<>(NAME, source, end - start);
     }
 }
