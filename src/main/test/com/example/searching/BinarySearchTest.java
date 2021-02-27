@@ -10,56 +10,56 @@ class BinarySearchTest {
     void binarySearch_whenTargetElementLast_thenFindIt() {
         var actual = BinarySearch.binarySearch(new int[]{1, 2, 3, 4, 6}, 6);
 
-        assertEquals(4, actual);
+        assertEquals(4, actual.getResult());
     }
 
     @Test
     void binarySearch_whenArrayWithEvenLength_thenFindElement() {
         var actual = BinarySearch.binarySearch(new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91}, 23);
 
-        assertEquals(5, actual);
+        assertEquals(5, actual.getResult());
     }
 
     @Test
     void binarySearch_whenElementNotInArray_thenReturnMinusOne() {
         var actual = BinarySearch.binarySearch(new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91}, 20);
 
-        assertEquals(-1, actual);
+        assertEquals(-1, actual.getResult());
     }
 
     @Test
     void binarySearch_whenFirstElement_thenFindIt() {
         var actual = BinarySearch.binarySearch(new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91}, 2);
 
-        assertEquals(0, actual);
+        assertEquals(0, actual.getResult());
     }
 
     @Test
     void binarySearch_whenValueLowerThenMinimumValue_thenReturnMinusOne() {
         var actual = BinarySearch.binarySearch(new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91}, -1);
 
-        assertEquals(-1, actual);
+        assertEquals(-1, actual.getResult());
     }
 
     @Test
     void binarySearch_whenValueHigherThenMaxValue_thenReturnMinusOne() {
         var actual = BinarySearch.binarySearch(new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91}, 100);
 
-        assertEquals(-1, actual);
+        assertEquals(-1, actual.getResult());
     }
 
     @Test
     void binarySearch_whenFirstNegativeNumber_thenReturnMinusOne() {
         var actual = BinarySearch.binarySearch(new int[]{-2, -1, 5, 8, 12, 16, 23, 38, 56, 72, 91}, -2);
 
-        assertEquals(0, actual);
+        assertEquals(0, actual.getResult());
     }
 
     @Test
     void binarySearch_whenNegativeNumber_thenReturnMinusOne() {
         var actual = BinarySearch.binarySearch(new int[]{-2, -1, 5, 8, 12, 16, 23, 38, 56, 72, 91}, -1);
 
-        assertEquals(1, actual);
+        assertEquals(1, actual.getResult());
     }
 
     @Test
@@ -70,7 +70,7 @@ class BinarySearchTest {
         }
         var actual = BinarySearch.binarySearch(array, 183965);
 
-        assertEquals(183965, actual);
+        assertEquals(183965, actual.getResult());
     }
 
 }

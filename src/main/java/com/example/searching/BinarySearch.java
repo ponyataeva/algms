@@ -17,34 +17,19 @@ public final class BinarySearch {
     }
 
     private static int perform(int[] source, int target) {
-        int increment = deleteAndRound(source.length - 1);
-        int index = increment;
+        int left = 0, right = source.length - 1;
 
-        if (target < source[0]) {
-            return -1;
-        } else if (target > source[source.length - 1]) {
-            return -1;
-        }
-        else if (target == source[0]) {
-            return 0;
-        } else if (target == source[source.length - 1]) {
-            return source.length - 1;
-        }
-        while (increment > 0) {
-            if (source[index] == target) {
-                return index;
-            } else if (source[index] > target) {
-                increment = deleteAndRound(increment);
-                index -= increment;
-            } else if (source[index] < target) {
-                increment = deleteAndRound(increment);
-                index += increment;
+        while (left <= right) {
+            var middle = left + (right - left) / 2;
+
+            if (source[middle] == target) {
+                return middle;
+            } else if (source[middle] < target) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
             }
         }
         return -1;
-    }
-
-    private static int deleteAndRound(int value) {
-        return value == 1 ? 0 : (value + 2 - 1) / 2;
     }
 }
