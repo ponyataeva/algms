@@ -60,4 +60,14 @@ abstract class GeneralTest {
         assertTrue(Arrays.equals(expected, actual.getResult()));
     }
 
+    @Test
+    void sort_whenArrayHasDuplication_thenSortThem() {
+        var expected = new int[]{5, 5, 6, 7, 7, 10};
+        var target = new int[]{10, 5, 7, 7, 5, 6};
+
+        var actual = soringFunction.apply(target);
+
+        assertTrue(Arrays.equals(expected, actual.getResult()));
+    }
+
 }
