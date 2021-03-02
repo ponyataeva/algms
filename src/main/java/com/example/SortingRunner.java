@@ -18,6 +18,7 @@ public class SortingRunner {
         run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), false);
         run(InsertionSortBinarySearch::sort, Arrays.copyOf(targetData, targetData.length), false);
         run(InsertionSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(MergeSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
     }
 
     public static void run(Function<int[], Result<int[]>> sorting, int[] toSort, boolean printResult) {
