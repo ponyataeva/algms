@@ -1,13 +1,14 @@
 package com.example.sorting;
 
-import lombok.RequiredArgsConstructor;
 import com.example.model.Result;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.function.Function;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @RequiredArgsConstructor
@@ -64,6 +65,16 @@ abstract class GeneralTest {
     void sort_whenArrayHasDuplication_thenSortThem() {
         var expected = new int[]{5, 5, 6, 7, 7, 10};
         var target = new int[]{10, 5, 7, 7, 5, 6};
+
+        var actual = soringFunction.apply(target);
+
+        assertTrue(Arrays.equals(expected, actual.getResult()));
+    }
+
+    @Test
+    void sort_whenOddArraySize_thenSort() {
+        var expected = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        var target = new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1};
 
         var actual = soringFunction.apply(target);
 
