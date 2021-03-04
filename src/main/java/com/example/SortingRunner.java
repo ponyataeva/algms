@@ -9,7 +9,7 @@ import java.util.function.Function;
 public class SortingRunner {
 
     public static void main(String[] args) {
-        var targetData = DataGenerator.generateData(100);
+        var targetData = DataGenerator.generateData(100000);
         System.out.println("unsorted data: " + Arrays.toString(targetData));
 
         run(SelectionSort::sort, Arrays.copyOf(targetData, targetData.length), false);
@@ -18,6 +18,7 @@ public class SortingRunner {
         run(InsertionSort::sort, Arrays.copyOf(targetData, targetData.length), false);
         run(InsertionSortBinarySearch::sort, Arrays.copyOf(targetData, targetData.length), false);
         run(InsertionSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
+        run(MergeSort::sort, Arrays.copyOf(targetData, targetData.length), false);
         run(MergeSortRecursive::sort, Arrays.copyOf(targetData, targetData.length), false);
     }
 

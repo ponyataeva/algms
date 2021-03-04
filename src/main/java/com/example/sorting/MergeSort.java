@@ -4,28 +4,31 @@ import com.example.model.Result;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public final class MergeSortRecursive {
-
-    public static final String NAME = "merge-sort[recursive]";
+public final class MergeSort {
+    public static final String NAME = "merge-sort";
 
     public static Result<int[]> sort(int[] source) {
         var start = System.currentTimeMillis();
-        sort(source, new int[source.length], 0, source.length - 1);
+        sort(source, new int[source.length]);
         var end = System.currentTimeMillis();
         return new Result<>(NAME, source, end - start);
     }
 
-    public static void sort(int[] source, int[] tmp, int left, int right) {
-        if (right > left) {
-            var middle = left + (right - left) / 2;
-            sort(source, tmp, left, middle);
-            sort(source, tmp, middle + 1, right);
-            merge(source, tmp, left, right);
+    public static void sort(int[] source, int[] tmp) {
+        var size = source.length;
+
+        for (var step = 1; step < size; step = 2 * step) {
+            for (var leftStart = 0; leftStart < size - 1; leftStart += 2 * step) {
+
+                var rightEnd = Math.min(leftStart + 2 * step - 1, size - 1);
+                var leftEnd = Math.min(leftStart + step - 1, size - 1);
+
+                merge(source, tmp, leftStart, leftEnd, rightEnd);
+            }
         }
     }
 
-    private static void merge(int[] source, int[] tmp, int leftStart, int rightEnd) {
-        var leftEnd = (rightEnd + leftStart) / 2;
+    private static void merge(int[] source, int[] tmp, int leftStart, int leftEnd, int rightEnd) {
         var rIndex = leftEnd + 1;
         var lIndex = leftStart;
         var index = leftStart;
